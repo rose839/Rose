@@ -12,7 +12,7 @@ include scripts/make-rules/golang.mk
 # Build options
 
 ROOT_PACKAGE=github.com/rose839/Rose
-VERSION_PACKAGE=github.com/rose839/rose839/pkg/version
+VERSION_PACKAGE=github.com/rose839/Rose/pkg/version
 
 # ==============================================================================
 # Usage
