@@ -37,7 +37,11 @@ type Info struct {
 
 // String returns info as a human-friendly version string.
 func (info Info) String() string {
+	if s, err := info.Text(); err == nil {
+		return string(s)
+	}
 
+	return info.GitVersion
 }
 
 // ToJSON returns the JSON string of version information.

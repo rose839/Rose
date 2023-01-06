@@ -1,6 +1,16 @@
 // Package verflag defines utility functions to handle command line flags.
 package verflag
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+
+	flag "github.com/spf13/pflag"
+
+	"github.com/rose839/Rose/pkg/version"
+)
+
 type versionValue int
 
 const (
