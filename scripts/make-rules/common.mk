@@ -39,3 +39,4 @@ COVERAGE := 60
 endif
 
 PLATFORMS ?= linux_amd64 linux_arm64
+
