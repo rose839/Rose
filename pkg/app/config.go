@@ -5,7 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"thunder_fire/pkg/homedir"
+
+	"github.com/rose839/Rose/pkg/homedir"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"

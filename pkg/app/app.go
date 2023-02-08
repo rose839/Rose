@@ -4,7 +4,8 @@ package app
 import (
 	"fmt"
 	"os"
-	"thunder_fire/pkg/term"
+
+	"github.com/rose839/Rose/pkg/term"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
