@@ -50,7 +50,7 @@ func (v *versionValue) String() string {
 		return strRawVersion
 	}
 
-	return fmt.Sprintf("%v", bool(*v == versionValue))
+	return fmt.Sprintf("%v", bool(*v == VersionTrue))
 }
 
 func (v *versionValue) Type() string {
@@ -58,7 +58,7 @@ func (v *versionValue) Type() string {
 }
 
 // VersionVar defines a flag with the specified name and usage string.
-func VersionVar(p *versionValue, name string, value versionVar, usage string) {
+func VersionVar(p *versionValue, name string, value versionValue, usage string) {
 	*p = value
 	flag.Var(p, name, usage)
 

@@ -15,7 +15,7 @@ import (
 type App struct {
 	basename    string               // 应用名
 	name        string               // 应用简短描述
-	description string               // 应用描述
+	description string               // 应用长描述
 	options     CliOptions           // 命令行选项
 	runFunc     RunFunc              // 应用的启动函数
 	silence     bool                 // 是否设置为silence模式，该模式下应用不会输出应用启动信息、配置信息和版本信息

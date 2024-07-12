@@ -5,14 +5,16 @@
 all: build
 
 # ==============================================================================
-# Includes
-include scripts/make-rules/golang.mk
-
-# ==============================================================================
 # Build options
 
 ROOT_PACKAGE=github.com/rose839/Rose
 VERSION_PACKAGE=github.com/rose839/Rose/pkg/version
+
+# ==============================================================================
+# Includes
+
+include scripts/make-rules/common.mk # common.mk should be included first
+include scripts/make-rules/golang.mk
 
 # ==============================================================================
 # Usage
