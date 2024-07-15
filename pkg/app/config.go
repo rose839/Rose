@@ -17,14 +17,11 @@ const configFlagName = "config"
 
 var cfgFile string
 
-func init() {
-	// 创建config flag
-	pflag.StringVarP(&cfgFile, "config", "c", cfgFile, "Read configuration from specified `FILE`, "+
-		"support JSON, TOML, YAML, HCL, or Java properties formats.")
-}
-
 // addConfigFlag添加config flag到指定flagset
 func addConfigFlag(basename string, fs *pflag.FlagSet) {
+	// 创建config flag
+	pflag.StringVarP(&cfgFile, configFlagName, "c", cfgFile, "Read configuration from specified `FILE`, "+
+		"support JSON, TOML, YAML, HCL, or Java properties formats.")
 	fs.AddFlag(pflag.Lookup(configFlagName))
 
 	viper.AutomaticEnv()

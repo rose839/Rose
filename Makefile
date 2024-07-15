@@ -47,6 +47,11 @@ export USAGE_OPTIONS
 build:
 	@$(MAKE) go.build
 
+## clean: Remove all files that are created by building.
+.PHONY: clean
+clean:
+	@$(MAKE) go.clean
+
 ## help: Show this help info.
 .PHONY: help
 help: Makefile

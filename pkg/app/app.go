@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/rose839/Rose/pkg/term"
+	"github.com/rose839/Rose/pkg/version/verflag"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -155,7 +156,7 @@ func (app *App) buildCommand() {
 
 	// 添加-v、--verison选项
 	if !app.noVersion {
-
+		verflag.AddFlags(namedFlagSets.FlagSet("global"))
 	}
 
 	// 添加-c、--config选项
@@ -189,7 +190,7 @@ func (app *App) Command() *cobra.Command {
 func (app *App) runCommand(cmd *cobra.Command, args []string) error {
 	// 应用指定了version flag，输出版本信息，然后退出程序
 	if !app.noVersion {
-
+		verflag.PrintAndExitIfRequested()
 	}
 
 	// 应用指定了配置文件
