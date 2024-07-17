@@ -1,6 +1,7 @@
 package rose
 
 import (
+	"github.com/rose839/Rose/internal/rose/compiler"
 	"github.com/rose839/Rose/pkg/app"
 )
 
@@ -28,7 +29,10 @@ func run(opts *Options) app.RunFunc {
 			return err
 		}
 
-		print(config.Code)
+		compiler := compiler.NewCompiler(config.Code)
+		if err := compiler.Compile(config.Code); err != nil {
+			return err
+		}
 		return nil
 	}
 }
