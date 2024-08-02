@@ -29,7 +29,7 @@ func run(opts *Options) app.RunFunc {
 			return err
 		}
 
-		compiler := compiler.NewCompiler(config.Code)
+		compiler := compiler.NewCompiler()
 		if err := compiler.Compile(config.Code); err != nil {
 			return err
 		}

@@ -12,17 +12,17 @@ type Compiler struct {
 }
 
 // NewCompiler创建一个新的Compiler对象
-func NewCompiler(Code string) *Compiler {
+func NewCompiler() *Compiler {
 	return &Compiler{}
 }
 
 // Compile用于编译rose脚本
 func (c *Compiler) Compile(Code string) error {
-	// 词法分析
+	// 生成词法分析器
 	inputStream := antlr.NewInputStream(Code)
 	c.Lexer = grammar.NewRoseLexer(inputStream)
 
-	// 语法分析
+	// 生成语法分析器
 	c.Parser = grammar.NewRoseParser(antlr.NewCommonTokenStream(c.Lexer, antlr.LexerDefaultTokenChannel))
 
 	// walker := antlr.NewParseTreeWalker()

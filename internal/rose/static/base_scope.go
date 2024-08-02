@@ -6,7 +6,7 @@ var _ base.Scope = (*BaseScope)(nil)
 
 // BaseScope表示作用域基础结构
 type BaseScope struct {
-	Symbols []base.Symbol // 作用域内的符号
+	Symbols []base.Symbol // 作用域内的符号集合
 }
 
 func NewBaseScope() *BaseScope {
@@ -19,6 +19,11 @@ func NewBaseScope() *BaseScope {
 func (s *BaseScope) AddSymbol(symbol base.Symbol) {
 	s.Symbols = append(s.Symbols, symbol)
 	symbol.SetScope(s)
+}
+
+// GetName获取作用域名称
+func (s *BaseScope) GetName() string {
+	panic("implement me")
 }
 
 // GetVariable从作用域中获取变量
